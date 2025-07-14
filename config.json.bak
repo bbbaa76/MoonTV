@@ -81,13 +81,9 @@
       "api": "https://ikunzyapi.com/api.php/provide/vod",
       "name": "iKun资源"
     },
-    "maotaizy": {
-      "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-      "name": "茅台资源"
-    },
-    "ukuzy": {
-      "api": "https://api.ukuapi88.com/api.php/provide/vod",
-      "name": "u酷资源"
+    "ok": {
+      "api": "https://api.okzyw.net/api.php/provide/vod",
+      "name": "ok资源"
     }
   }
 }
