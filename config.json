@@ -49,6 +49,10 @@
       "api": "https://dbzy.tv/api.php/provide/vod",
       "name": "豆瓣资源"
     },
+    "newdbzy":{
+      "api": "https://caiji.dbzy5.com/api.php/provide/vod/",
+      "name": "新豆瓣资源"
+    },
     "mozhua": {
       "api": "https://mozhuazy.com/api.php/provide/vod",
       "name": "魔爪资源"
@@ -76,6 +80,10 @@
     "ikun": {
       "api": "https://ikunzyapi.com/api.php/provide/vod",
       "name": "iKun资源"
+    },
+    "ok": {
+      "api": "https://api.okzyw.net/api.php/provide/vod",
+      "name": "ok资源"
     }
   }
 }
