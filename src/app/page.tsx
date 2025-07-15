@@ -21,6 +21,7 @@ import VideoCard from '@/components/VideoCard';
 
 function HomeClient() {
   const [activeTab, setActiveTab] = useState<'home' | 'favorites'>('home');
+  const [latestMovies, setLatestMovies] = useState<DoubanItem[]>([]);
   const [hotMovies, setHotMovies] = useState<DoubanItem[]>([]);
   const [hotTvShows, setHotTvShows] = useState<DoubanItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -60,10 +61,12 @@ function HomeClient() {
         setLoading(true);
 
         // 并行获取热门电影和热门剧集
-        const [moviesResponse, tvShowsResponse] = await Promise.all([
-          fetch('/api/douban?type=movie&tag=热门'),
-          fetch('/api/douban?type=tv&tag=热门'),
-        ]);
+        const [moviesResponse, tvShowsResponse, latestMoviesRes] =
+          await Promise.all([
+            fetch('/api/douban?type=movie&tag=热门'),
+            fetch('/api/douban?type=tv&tag=热门'),
+            fetch('/api/douban?type=movie&tag=最新'),
+          ]);
 
         if (moviesResponse.ok) {
           const moviesData: DoubanResult = await moviesResponse.json();
@@ -73,6 +76,10 @@ function HomeClient() {
         if (tvShowsResponse.ok) {
           const tvShowsData: DoubanResult = await tvShowsResponse.json();
           setHotTvShows(tvShowsData.list);
+        }
+        if (latestMoviesRes.ok) {
+          const latestMoviesData: DoubanResult = await latestMoviesRes.json();
+          setLatestMovies(latestMoviesData.list);
         }
       } finally {
         setLoading(false);
@@ -182,6 +189,50 @@ function HomeClient() {
             <>
               {/* 继续观看 */}
               <ContinueWatching />
+
+              {/* 最新电影 */}
+              <section className='mb-8'>
+                <div className='mb-4 flex items-center justify-between'>
+                  <h2 className='text-xl font-bold text-gray-800 dark:text-gray-200'>
+                    最新电影
+                  </h2>
+                  <Link
+                    href='/douban?type=movie&tag=最新&title=最新电影'
+                    className='flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                  >
+                    查看更多
+                    <ChevronRight className='w-4 h-4 ml-1' />
+                  </Link>
+                </div>
+                <ScrollableRow>
+                  {loading
+                    ? Array.from({ length: 8 }).map((_, index) => (
+                        <div
+                          key={index}
+                          className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
+                        >
+                          <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-gray-800'>
+                            <div className='absolute inset-0 bg-gray-300 dark:bg-gray-700'></div>
+                          </div>
+                          <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-gray-800'></div>
+                        </div>
+                      ))
+                    : latestMovies.map((movie, index) => (
+                        <div
+                          key={index}
+                          className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
+                        >
+                          <VideoCard
+                            from='douban'
+                            title={movie.title}
+                            poster={movie.poster}
+                            douban_id={movie.id}
+                            rate={movie.rate}
+                          />
+                        </div>
+                      ))}
+                </ScrollableRow>
+              </section>
 
               {/* 热门电影 */}
               <section className='mb-8'>

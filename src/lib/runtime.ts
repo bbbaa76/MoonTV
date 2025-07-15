@@ -4,6 +4,10 @@
 export const config = {
   cache_time: 7200,
   api_site: {
+    newdbzy: {
+      api: 'https://caiji.dbzy5.com/api.php/provide/vod/',
+      name: '新豆瓣资源',
+    },
     dyttzy: {
       api: 'http://caiji.dyttzyapi.com/api.php/provide/vod',
       name: '电影天堂资源',
@@ -79,6 +83,14 @@ export const config = {
     ikun: {
       api: 'https://ikunzyapi.com/api.php/provide/vod',
       name: 'iKun资源',
+    },
+    maotaizy: {
+      api: 'https://caiji.maotaizy.cc/api.php/provide/vod',
+      name: '茅台资源',
+    },
+    ukuzy: {
+      api: 'https://api.ukuapi88.com/api.php/provide/vod',
+      name: 'u酷资源',
     },
   },
 } as const;

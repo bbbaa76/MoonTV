@@ -137,6 +137,11 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
   const menuItems = [
     {
       icon: Film,
+      label: '最新电影',
+      href: '/douban?type=movie&tag=最新&title=最新电影',
+    },
+    {
+      icon: Film,
       label: '热门电影',
       href: '/douban?type=movie&tag=热门&title=热门电影',
     },

@@ -1,0 +1,27 @@
+# GPTree Local Config
+version: 2
+
+# Whether to use .gitignore
+useGitIgnore: true
+# File types to include (e.g., .py,.js)
+includeFileTypes: \*
+# File types to exclude when includeFileTypes is '*'
+excludeFileTypes: 
+# Output file name
+outputFile: gptree_output.txt
+# Whether to output the file locally or relative to the project directory
+outputFileLocally: true
+# Whether to copy the output to the clipboard
+copyToClipboard: false
+# Whether to use safe mode (prevent overly large files from being combined)
+safeMode: false
+# Whether to store the files chosen in the config file (--save, -s)
+storeFilesChosen: true
+# Whether to include line numbers in the output (--line-numbers, -n)
+lineNumbers: false
+# Whether to show ignored files in the directory tree
+showIgnoredInTree: false
+# Whether to show only default ignored files in the directory tree while still respecting gitignore
+showDefaultIgnoredInTree: false
+# Previously selected files (when using the -s or --save flag previously)
+previousFiles: src/app/api/admin/reset/route.ts,src/components/PageLayout.tsx,src/app/api/image-proxy/route.ts,src/app/douban/page.tsx,src/app/api/detail/route.ts,src/lib/config.ts,src/lib/utils.ts,src/lib/redis.db.ts,src/components/EpisodeSelector.tsx,package.json,src/components/MobileBottomNav.tsx,src/components/ScrollableRow.tsx,start.js,src/components/ImagePlaceholder.tsx,src/lib/fetchVideoDetail.ts,tsconfig.json,src/lib/runtime.ts,src/app/api/search/route.ts,src/app/api/favorites/route.ts,src/app/play/page.tsx,src/components/SiteProvider.tsx,src/components/ThemeProvider.tsx,tailwind.config.ts,src/app/api/douban/route.ts,src/components/MobileHeader.tsx,src/app/api/search/one/route.ts,src/components/LogoutButton.tsx,src/lib/downstream.ts,src/app/page.tsx,src/styles/globals.css,src/lib/db.ts,src/app/api/server-config/route.ts,config.json,src/components/DoubanCardSkeleton.tsx,src/app/api/search/resources/route.ts,src/components/ContinueWatching.tsx,src/app/api/logout/route.ts,src/lib/cron.ts,src/app/api/login/route.ts,src/components/ThemeToggle.tsx,src/components/VideoCard.tsx,src/app/search/page.tsx,src/lib/db.client.ts,src/lib/refreshRecordAndFavorites.ts,src/app/api/admin/source/route.ts,src/app/login/page.tsx,src/lib/admin.types.ts,src/app/api/playrecords/route.ts,src/middleware.ts,src/styles/colors.css,vercel.json,wrangler.toml,src/app/api/searchhistory/route.ts,src/app/api/register/route.ts,src/app/globals.css,src/app/api/admin/config/route.ts,src/app/admin/page.tsx,src/app/api/admin/site/route.ts,src/lib/auth.ts,src/app/api/admin/user/route.ts,scripts/convert-config.js,public/robots.txt,src/components/CapsuleSwitch.tsx,src/app/layout.tsx,src/components/Sidebar.tsx,src/components/BackButton.tsx,src/lib/types.ts
