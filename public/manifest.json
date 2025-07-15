@@ -1,7 +1,7 @@
 {
   "name": "aiRain",
   "short_name": "Rain",
-  "description": "影视聚合",
+  "description": "video streaming platform",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
